@@ -1,0 +1,21 @@
+<body>
+<div class = 'contianer' >
+<h4>Create New Blog Post</h4>
+<br> 
+{% from "_formhelpers.html" import render_field %}
+		<form method=post action="/post">
+			<dl>
+				{{render_field(form.title)}}
+<br>
+				{{render_field(form.body)}}
+			</dl>
+			<p><input type=submit value=Post></p>
+		</form>
+		
+		{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+</div>
+<p><a href="/posts">Display all blog posts</a></p>
+<p><a href="/">Home</a></p>
+</body>
